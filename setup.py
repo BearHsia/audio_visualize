@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        	'audio_visualizer_node = audio_visualize.audio_visualizer:main',
         ],
     },
 )
