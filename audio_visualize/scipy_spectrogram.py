@@ -24,7 +24,7 @@ class Visualizer():
                 if self.display_data is None:
                         self.display_data = indata*10
                 else:
-                self.display_data = np.append(self.display_data,indata*10,axis=0)
+                        self.display_data = np.append(self.display_data,indata*10,axis=0)
                 if np.shape(self.display_data)[0]>self.device_info['default_samplerate']:
                         self.display_data = None
 
