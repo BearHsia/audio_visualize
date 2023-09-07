@@ -11,7 +11,7 @@ class Visualizer():
 
                 self.display_sec = 5
                 self.row_num = self.display_sec*int(self.device_info['default_samplerate'])
-                self.display_data = np.zeros((self.row_num,self.device_info['max_input_channels']))
+                self.display_data = None
 
                 self.stream  = sd.InputStream(device = self.device, 
                                                 channels = self.device_info['max_input_channels'], 
@@ -21,7 +21,13 @@ class Visualizer():
                 self.stream.start()
 
         def audio_callback(self,indata,frames,time,status):
+                if self.display_data is None:
+                        self.display_data = indata*10
+                else:
                 self.display_data = np.append(self.display_data,indata*10,axis=0)
+                if np.shape(self.display_data)[0]>self.device_info['default_samplerate']:
+                        self.display_data = None
+
                 
 
         def trim(self):
