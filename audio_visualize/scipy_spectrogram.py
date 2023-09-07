@@ -28,8 +28,6 @@ class Visualizer():
                 if np.shape(self.display_data)[0]>self.device_info['default_samplerate']:
                         self.display_data = None
 
-                
-
         def trim(self):
                 self.display_data = np.delete(self.display_data, range(0,np.shape(self.display_data)[0]-self.row_num), axis=0)
                 return self.display_data.copy()
