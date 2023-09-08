@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
         	'audio_visualizer_node = audio_visualize.audio_visualizer:main',
+        	'audio_record_node = audio_visualize.UMA16_publisher:main',
+        	'audio_logging_node = audio_visualize.UMA16_logging:main',
         ],
     },
 )

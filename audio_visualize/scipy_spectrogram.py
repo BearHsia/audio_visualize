@@ -3,9 +3,13 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 
+
+"""
+THIS IS STILL UNDER CONSTRUCTION!!!
+"""
 class Visualizer():
         def __init__(self):
-                self.device = 'Kinect' 
+                self.device = 'UMA16' 
                 self.device_info =  sd.query_devices(self.device, 'input')
                 print(self.device_info)
 
